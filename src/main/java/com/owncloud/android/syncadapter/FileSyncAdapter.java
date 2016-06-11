@@ -144,7 +144,8 @@ public class FileSyncAdapter extends AbstractOwnCloudSyncAdapter {
             String authority, ContentProviderClient providerClient,
             SyncResult syncResult) {
 
-		int timeTillNextSyncInMinutes = PreferenceManager.getDefaultSharedPreferences(getContext()).getInt("time_between_sync", 60);
+        String timeString = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("time_between_sync", "60");
+        int timeTillNextSyncInMinutes = Integer.parseInt(timeString);
 
         mCancellation = false;
         /* When 'true' the process was requested by the user through the user interface;
@@ -154,7 +155,7 @@ public class FileSyncAdapter extends AbstractOwnCloudSyncAdapter {
         mLastFailedResult = null;
         mConflictsFound = 0;
         mFailsInFavouritesFound = 0;
-        mForgottenLocalFiles = new HashMap<String, String>();
+        mForgottenLocalFiles = new HashMap<>();
         mSyncResult = syncResult;
         mSyncResult.fullSyncRequested = false;
         mSyncResult.delayUntil = (System.currentTimeMillis()/1000) + timeTillNextSyncInMinutes*60; // avoid too many automatic synchronizations
