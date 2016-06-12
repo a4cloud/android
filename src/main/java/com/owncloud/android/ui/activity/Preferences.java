@@ -200,8 +200,7 @@ public class Preferences extends PreferenceActivity
             }
         });
         mPrefTimeBetweenSynchronizations = findPreference("time_between_sync");
-		if (mPrefTimeBetweenSynchronizations != null) {
-
+        if (mPrefTimeBetweenSynchronizations != null) {
             mPrefTimeBetweenSynchronizations.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValueObject) {
@@ -215,8 +214,7 @@ public class Preferences extends PreferenceActivity
                     return false;
                 }
             });
-
-		}
+        }
 
         PreferenceCategory preferenceCategory = (PreferenceCategory) findPreference("more");
 
