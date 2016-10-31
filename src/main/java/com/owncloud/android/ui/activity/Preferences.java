@@ -197,6 +197,7 @@ public class Preferences extends PreferenceActivity
                 return true;
             }
         });
+
         mPrefTimeBetweenSynchronizations = findPreference("time_between_sync");
         if (mPrefTimeBetweenSynchronizations != null) {
             mPrefTimeBetweenSynchronizations.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
