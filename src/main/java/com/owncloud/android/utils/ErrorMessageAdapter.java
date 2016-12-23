@@ -192,6 +192,9 @@ public class ErrorMessageAdapter {
                 message = String.format(res.getString(R.string.forbidden_permissions),
                         res.getString(R.string.share_link_forbidden_permissions));
 
+            } else if (result.getCode() == ResultCode.MAINTENANCE_MODE) {
+                message = res.getString(R.string.maintenance_mode);
+
             } else {    // Generic error
                 // Show a Message, operation finished without success
                 message = res.getString(R.string.share_link_file_error);
@@ -209,6 +212,9 @@ public class ErrorMessageAdapter {
                 // Error --> No permissions
                 message = String.format(res.getString(R.string.forbidden_permissions),
                         res.getString(R.string.unshare_link_forbidden_permissions));
+
+            } else if (result.getCode() == ResultCode.MAINTENANCE_MODE) {
+                message = res.getString(R.string.maintenance_mode);
 
             } else {    // Generic error
                 // Show a Message, operation finished without success
@@ -228,6 +234,9 @@ public class ErrorMessageAdapter {
                 // Error --> No permissions
                 message = String.format(res.getString(R.string.forbidden_permissions),
                         res.getString(R.string.update_link_forbidden_permissions));
+
+            } else if (result.getCode() == ResultCode.MAINTENANCE_MODE) {
+                message = res.getString(R.string.maintenance_mode);
 
             } else {    // Generic error
                 // Show a Message, operation finished without success
@@ -251,6 +260,9 @@ public class ErrorMessageAdapter {
             } else if (result.getCode() == ResultCode.INVALID_CHARACTER_DETECT_IN_SERVER) {
                 message = res.getString(R.string.filename_forbidden_charaters_from_server);
 
+            } else if (result.getCode() == ResultCode.MAINTENANCE_MODE) {
+                message = res.getString(R.string.maintenance_mode);
+
             } else {    // Generic error
                 // Show a Message, operation finished without success
                 message = res.getString(R.string.move_file_error);
@@ -264,6 +276,9 @@ public class ErrorMessageAdapter {
                 if (result.getCode() == ResultCode.FILE_NOT_FOUND) {
                     message = String.format(res.getString(R.string.sync_current_folder_was_removed),
                             folderPathName);
+
+                } else if (result.getCode() == ResultCode.MAINTENANCE_MODE) {
+                    message = res.getString(R.string.maintenance_mode);
 
                 } else {    // Generic error
                     // Show a Message, operation finished without success
@@ -285,6 +300,9 @@ public class ErrorMessageAdapter {
             } else if (result.getCode() == ResultCode.FORBIDDEN) {
                 message = String.format(res.getString(R.string.forbidden_permissions),
                         res.getString(R.string.forbidden_permissions_copy));
+                
+            } else if (result.getCode() == ResultCode.MAINTENANCE_MODE) {
+                message = res.getString(R.string.maintenance_mode);
 
             } else {    // Generic error
                 // Show a Message, operation finished without success
