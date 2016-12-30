@@ -1538,9 +1538,9 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity
     }
 
 
-    private void updateStatusIconFailUserName(int statusText){
+    private void updateFailedAuthStatusIconAndText(int failedStatusText){
         mAuthStatusIcon = R.drawable.ic_alert;
-        mAuthStatusText = statusText;
+        mAuthStatusText = failedStatusText;
     }
 
     private void updateServerStatusIconNoRegularAuth() {
