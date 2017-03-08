@@ -51,6 +51,7 @@ repositories {
     }
 }
 
+
 android {
     lintOptions {
         abortOnError true
@@ -228,4 +229,3 @@ tasks.withType(Test) {
     }
 }
 
-apply plugin: 'com.google.gms.google-services'
