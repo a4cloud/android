@@ -118,7 +118,7 @@
     <string name="file_list_empty_text_videos">Upload some videos or activate auto upload!</string>
     <string name="file_list_empty_text_videos_filter">No videos for your query found!</string>
     <string name="upload_list_empty_headline">No uploads available</string>
-    <string name="upload_list_empty_text">Upload some content or activate instant upload!</string>
+    <string name="upload_list_empty_text">Upload some content or activate instant upload!\nPlease note that currently all pending uploads are removed on reboot!</string>
     <string name="upload_list_empty_text_auto_upload">Upload some content or activate auto upload!</string>
     <string name="file_list_folder">folder</string>
     <string name="file_list_folders">folders</string>
