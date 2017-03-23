@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat;
  */
 public class PermissionUtil {
     public static final int PERMISSIONS_WRITE_EXTERNAL_STORAGE = 1;
+    public static final int PERMISSIONS_READ_EXTERNAL_STORAGE = 2;
 
     /**
      * Wrapper method for ContextCompat.checkSelfPermission().
@@ -50,4 +51,16 @@ public class PermissionUtil {
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 PERMISSIONS_WRITE_EXTERNAL_STORAGE);
     }
+
+    /**
+     * request the read permission for external storage.
+     *
+     * @param activity The target activity.
+     */
+    public static void requesReadExternalStoreagePermission(Activity activity) {
+        ActivityCompat.requestPermissions(activity,
+                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                PERMISSIONS_READ_EXTERNAL_STORAGE);
+    }
+
 }
