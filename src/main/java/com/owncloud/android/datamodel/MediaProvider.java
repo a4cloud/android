@@ -75,6 +75,7 @@ public class MediaProvider {
                 MediaFolder mediaFolder = new MediaFolder();
                 folderName = cursorFolders.getString(cursorFolders.getColumnIndex(
                         MediaStore.Images.Media.BUCKET_DISPLAY_NAME));
+                mediaFolder.type = MediaFolder.FOLDER_TYPE.IMAGE;
                 mediaFolder.folderName = folderName;
                 mediaFolder.filePaths = new ArrayList<>();
 
@@ -119,7 +120,7 @@ public class MediaProvider {
         return mediaFolders;
     }
 
-    public static List<MediaFolder> getMediaFolders(ContentResolver contentResolver, int itemLimit) {
+    public static List<MediaFolder> getVideoFolders(ContentResolver contentResolver, int itemLimit) {
         Cursor cursorFolders = contentResolver.query(MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
                 VIDEOS_FOLDER_PROJECTION, null, null, null);
         List<MediaFolder> mediaFolders = new ArrayList<>();
@@ -137,6 +138,7 @@ public class MediaProvider {
                 MediaFolder mediaFolder = new MediaFolder();
                 folderName = cursorFolders.getString(cursorFolders.getColumnIndex(
                         MediaStore.Video.Media.BUCKET_DISPLAY_NAME));
+                mediaFolder.type = MediaFolder.FOLDER_TYPE.VIDEO;
                 mediaFolder.folderName = folderName;
                 mediaFolder.filePaths = new ArrayList<>();
 
