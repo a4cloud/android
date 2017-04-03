@@ -111,6 +111,24 @@ public class BitmapUtils {
         
         return inSampleSize;
     }
+
+    /**
+     * scales a given bitmap depending on the given size parameters.
+     *
+     * @param bitmap the bitmap to be scaled
+     * @param px     the target pixel size
+     * @param width  the width
+     * @param height the height
+     * @param max    the max(height, width)
+     * @return the scaled bitmap
+     */
+    public static Bitmap scaleBitmap(Bitmap bitmap, float px, int width, int height, int max) {
+        float scale = px / max;
+        int w = Math.round(scale * width);
+        int h = Math.round(scale * height);
+        bitmap = Bitmap.createScaledBitmap(bitmap, w, h, true);
+        return bitmap;
+    }
     
     /**
      * Rotate bitmap according to EXIF orientation. 
