@@ -446,6 +446,9 @@ public class PassCodeActivity extends AppCompatActivity implements SoftKeyboardU
             mSoftKeyboardMode = false;
             setupKeyboard();
             break;
+        default:
+            // nothing to do
+            break;
         }
     }
 
